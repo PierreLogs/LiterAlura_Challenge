@@ -3,13 +3,14 @@ package com.aluracursos.literalura.controller;
 import com.aluracursos.literalura.model.Libros;
 import com.aluracursos.literalura.service.AutorService;
 import com.aluracursos.literalura.service.LibroService;
+
 import java.util.List;
 import java.util.Scanner;
 
 public class Principal {
-    private Scanner lectura = new Scanner(System.in);
-    private LibroService libroService;
-    private AutorService autorService;
+    private final Scanner lectura = new Scanner(System.in);
+    private final LibroService libroService;
+    private final AutorService autorService;
 
     public Principal(LibroService libroService, AutorService autorService) {
         this.libroService = libroService;
@@ -20,18 +21,18 @@ public class Principal {
         var opcion = -1;
         while (opcion != 0) {
             var menu = """
-                \n--- LITERALURA ---
-                1- Buscar libro por título (API)
-                2- Mostrar historial de libros buscados
-                3- Listar autores registrados
-                4- Listar autores vivos en determinado año
-                5- Listar libros por idioma
-                6- Top 10 Libros
-                7- Estadísticas de descargas
-                8- Buscar autor por nombre
-                
-                0- Salir
-                Elija una opción:""";
+                    \n--- LITERALURA ---
+                    1- Buscar libro por título (API)
+                    2- Mostrar historial de libros buscados
+                    3- Listar autores registrados
+                    4- Listar autores vivos en determinado año
+                    5- Listar libros por idioma
+                    6- Top 10 Libros
+                    7- Estadísticas de descargas
+                    8- Buscar autor por nombre
+                    
+                    0- Salir
+                    Elija una opción:""";
             System.out.println(menu);
 
             try {
@@ -87,12 +88,12 @@ public class Principal {
 
     private void listarPorIdioma() {
         System.out.println("""
-            Ingrese el código del idioma para buscar:
-            es - Español
-            en - Inglés
-            fr - Francés
-            pt - Portugués
-            """);
+                Ingrese el código del idioma para buscar:
+                es - Español
+                en - Inglés
+                fr - Francés
+                pt - Portugués
+                """);
         var codigoIdioma = lectura.nextLine().toLowerCase();
 
         List<Libros> librosFiltrados = libroService.listarLibrosPorIdioma(codigoIdioma);

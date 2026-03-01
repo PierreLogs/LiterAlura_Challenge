@@ -49,7 +49,7 @@ public class AutorService {
     private AutorRepository autorRepository;
 
     public void guardar(Autor autor) {
-       boolean existe = autoresMemoria.stream()
+        boolean existe = autoresMemoria.stream()
                 .anyMatch(a -> a.getNombre().equalsIgnoreCase(autor.getNombre()));
         if (!existe) {
             autoresMemoria.add(autor);

@@ -3,7 +3,7 @@ package com.aluracursos.literalura.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="libros")
+@Table(name = "libros")
 public class Libros {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,10 +15,11 @@ public class Libros {
     private Double numeroDescargas;
 
     @ManyToOne
-    @JoinColumn(name="autor_id")
+    @JoinColumn(name = "autor_id")
     private Autor autor;
 
-    public Libros(){}
+    public Libros() {
+    }
 
     public Libros(DatosLibros datosLibros, Autor autor) {
         this.titulo = datosLibros.titulo();
@@ -70,12 +71,12 @@ public class Libros {
     @Override
     public String toString() {
         return String.format("""
-                ----- LIBRO -----
-                Título: %s
-                Autor: %s
-                Idioma: %s
-                Descargas: %.1f
-                -----------------""", titulo,
+                        ----- LIBRO -----
+                        Título: %s
+                        Autor: %s
+                        Idioma: %s
+                        Descargas: %.1f
+                        -----------------""", titulo,
                 (autor != null ? autor.getNombre() : "Anónimo"),
                 idiomas, numeroDescargas);
     }

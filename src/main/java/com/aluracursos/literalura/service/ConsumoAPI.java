@@ -10,7 +10,7 @@ import java.net.http.HttpResponse;
 
 @Component
 public class ConsumoAPI {
-    public String obtenerDatos(String url){
+    public String obtenerDatos(String url) {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
@@ -19,10 +19,8 @@ public class ConsumoAPI {
         try {
             response = client
                     .send(request, HttpResponse.BodyHandlers.ofString());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+        } catch (IOException | InterruptedException e) {
+            throw new RuntimeException("Error al conectar con la API", e);
         }
 
         String json = response.body();
