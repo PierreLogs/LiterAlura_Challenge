@@ -3,6 +3,8 @@
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![CI](https://img.shields.io/github/actions/workflow/status/PierreLogs/LiterAlura_Challenge/ci.yml?style=for-the-badge&label=build)
+![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
 
 **LiterAlura** es una aplicación de consola desarrollada en Java utilizando el framework **Spring Boot**. El proyecto interactúa con la API de [Gutendex](https://gutendex.com/) para buscar información sobre libros y autores, almacenándolos en una base de datos PostgreSQL para realizar consultas avanzadas y estadísticas dinámicas.
 
