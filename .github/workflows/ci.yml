@@ -15,4 +15,4 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - run: ./mvnw clean verify -B
+      - run: chmod +x mvnw && ./mvnw clean verify -B
